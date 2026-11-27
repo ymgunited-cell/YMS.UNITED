@@ -1,0 +1,31 @@
+{
+  "name": "workspace",
+  "version": "0.0.0",
+  "license": "MIT",
+  "workspaces": [
+    "artifacts/yms-ai",
+    "artifacts/api-server",
+    "artifacts/mockup-sandbox",
+    "lib/api-client-react",
+    "lib/api-spec",
+    "lib/api-zod",
+    "lib/db",
+    "lib/integrations-openai-ai-react",
+    "lib/integrations-openai-ai-server",
+    "lib/sandbox",
+    "scripts"
+  ],
+  "scripts": {
+    "dev": "npm run build --workspace=@workspace/yms-ai && npm run dev --workspace=@workspace/api-server",
+    "build": "npm run typecheck && npm run build --workspace=@workspace/yms-ai && npm run build --workspace=@workspace/api-server",
+    "start": "npm run start --workspace=@workspace/api-server",
+    "typecheck:libs": "tsc --build",
+    "typecheck": "npm run typecheck:libs && npm run typecheck --workspace=@workspace/yms-ai --workspace=@workspace/api-server --workspace=@workspace/scripts",
+    "lint": "npm run typecheck"
+  },
+  "private": true,
+  "devDependencies": {
+    "typescript": "~5.9.2",
+    "prettier": "^3.8.1"
+  }
+}

@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "Y M S AI"
+version = "1.0.0"
+id = "artifacts/yms-ai"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 24049
+
+[services.development]
+run = "pnpm --filter @workspace/yms-ai run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/yms-ai", "run", "build" ]
+publicDir = "artifacts/yms-ai/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "24049"
+BASE_PATH = "/"

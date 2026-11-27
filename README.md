@@ -1,11 +1,5 @@
-<div align="center">
+# YMS AI — Standalone (Pre-Integration)
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+Recovered independent YMS AI monorepo for migration.
 
-  <h1>Built with AI Studio</h2>
-
-  <p>The fastest path from prompt to production with Gemini.</p>
-
-  <a href="https://aistudio.google.com/apps">Start building</a>
-
-</div>
+Read `HANDOVER.md`, `YMS_AI_COMPLETE_HANDOFF.md`, and `YMS_AI_TEST_STATUS.md`.

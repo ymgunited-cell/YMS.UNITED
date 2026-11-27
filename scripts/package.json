@@ -1,0 +1,22 @@
+{
+  "name": "@workspace/scripts",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "hello": "tsx ./src/hello.ts",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test:health": "tsx --test ./src/health-harness.ts",
+    "test:image-auth": "tsx --test ./src/image-auth-harness.ts",
+    "test:zero-cost": "tsx --test ./src/zero-cost-ai-harness.ts"
+  },
+  "dependencies": {
+    "@workspace/api-zod": "*"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.3.3",
+    "express": "^5",
+    "tsx": "^4.21.0"
+  }
+}
